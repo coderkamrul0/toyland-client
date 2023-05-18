@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import CategoryToy from '../CategoryToy/CategoryToy';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const ShopByCategory = () => {
 
@@ -19,6 +20,7 @@ const ShopByCategory = () => {
 
         })
     },[activeTab])
+
 
     return (
         <div className='pt-5'>

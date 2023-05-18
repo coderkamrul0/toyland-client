@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const NavBar = () => {
+
+  const {user, logOut} = useContext(AuthContext)
+
+  const handleLogOut = () => {
+    logOut().then().catch();
+  };
+
   const navItems = (
     <>
       <li><Link to={"/"}>Home</Link></li>
       <li><Link to={"/blogs"}>Blogs</Link></li>
       <li><Link to={"/allToys"}>All Toys</Link></li>
+      {
+        user && <li><Link to={"/addaToy"}>Add A Toy</Link></li>
+      }
+      {
+        user && <li><Link to={"/myToys"}>My Toys</Link></li>
+      }
       
     </>
   );
@@ -50,9 +64,24 @@ const NavBar = () => {
         <ul className="menu menu-horizontal px-1">{navItems}</ul>
       </div>
       <div className="navbar-end">
-        <Link to="#">
+        {
+          user?. uid && (
+            <img
+                style={{ height: "40px", width: "40px", borderRadius: '50%' }}
+                src={user.photoURL}
+                alt="Profile Picture"
+                data-toggle="tooltip"
+                title={user.displayName}
+              />
+          )
+        }
+        {
+          user? (
+            <button onClick={handleLogOut} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Sign Out</button>
+          ):
+          <Link to="/login">
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Login</button>
-        </Link>
+        </Link>}
       </div>
     </div>
   );
