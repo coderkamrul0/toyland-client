@@ -28,7 +28,7 @@ const handleSearch = () => {
     <div className="py-28">
       <h1 className="text-5xl font-bold text-center">All Toys</h1>
       <div className="text-center">
-        <input className="w-2/5 py-2 outline-none border border-[#757EFA] px-3 rounded-md " onChange={(event)=> setSearchText(event.target.value)} type="text" name="search" id="" />
+        <input className="md:w-2/5 py-2 mt-5 outline-none border border-[#757EFA] px-3 rounded-md " onChange={(event)=> setSearchText(event.target.value)} type="text" name="search" id="" />
         <button onClick={handleSearch} className="bg-[#757EFA] px-[22px] py-[9px] text-white rounded-md">Search</button>
       </div>
       <div>
