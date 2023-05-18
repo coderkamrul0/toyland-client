@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const AddaToy = () => {
+    const {user} = useContext(AuthContext);
   const [selectedOption, setSelectedOption] = useState("");
 
   const handleSelectChange = (event) => {
@@ -8,9 +10,31 @@ const AddaToy = () => {
   };
   const handleAddAToy = (event) => {
     event.preventDefault();
-    const form = event.target.value;
+    const form = event.target;
+    const name = form.name.value;
+    const picture = form.photoUrl.value;
     const category = selectedOption;
-    console.log(category);
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const seller_name = form.sellerName.value;
+    const seller_email = form.sellerEmail.value;
+    const quantity = form.quantity.value;
+    const details = form.details.value;
+    const toy = {name,picture,category,price,rating,seller_name,seller_email,quantity,details};
+    console.log(toy);
+
+    fetch(`http://localhost:5000/addToy`, {
+        method: "POST",
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(toy)
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+    })
+
   };
 
   return (
@@ -25,7 +49,7 @@ const AddaToy = () => {
               <input
                 type="text"
                 placeholder="Toy Name"
-                name="toyName"
+                name="name"
                 id="toyName"
                 className="w-full py-1 outline-none border border-[#757efa]"
               />
@@ -60,6 +84,8 @@ const AddaToy = () => {
                 name="sellerEmail"
                 id="sellerEmail"
                 className="w-full py-1 outline-none border border-[#757efa]"
+                defaultValue={user.email}
+                disabled
               />
             </div>
           </div>
