@@ -19,22 +19,24 @@ const AuthProvider = ({children}) => {
     }
 
 
+    
+    
+    // signIn user
+    const signIn = (email,password) => {
+        setLoading(true)
+        return signInWithEmailAndPassword(auth,email,password)
+    }
+    
     // state change
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth,currentUser => {
             setUser(currentUser)
             setLoading(false);
         })
-        return unsubscribe();
+        return () => {
+            unsubscribe()
+        }
     },[])
-
-
-    // signIn user
-    const signIn = (email,password) => {
-        setLoading(true)
-        return signInWithEmailAndPassword(auth,email,password)
-    }
-
 
     // sign in with google
     const googleProvider = new GoogleAuthProvider();

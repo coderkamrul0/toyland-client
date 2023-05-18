@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const AllToys = () => {
   const [allToys, setAllToys] = useState([]);
@@ -57,9 +58,11 @@ const handleSearch = () => {
                   <th>$ {toy.price}</th>
                   <th className="text-center">{toy.quantity}</th>
                   <th>
+                    <Link to={`/toy/${toy._id}`}>
                     <button className="bg-[#757EFA] px-[20px] py-[8px] text-white rounded-md">
                       View Details
                     </button>
+                    </Link>
                   </th>
                 </tr>
               ))}

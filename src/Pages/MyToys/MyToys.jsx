@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
-import { FaPencilAlt, FaEye  } from "react-icons/fa";
+import { FaPencilAlt, FaArchive  } from "react-icons/fa";
 
 
 const MyToys = () => {
@@ -49,10 +49,11 @@ const MyToys = () => {
                   <th>
                     <div className='flex  gap-2'>
                     <button className="bg-[#757EFA] px-[8px] py-[8px] text-white rounded-md">
-                      <FaEye/>
+                    <FaPencilAlt/>
                     </button>
                     <button className="bg-[#757EFA] px-[8px] py-[8px] text-white rounded-md">
-                      <FaPencilAlt/>
+                      
+                      <FaArchive/>
                     </button>
                     </div>
                   </th>

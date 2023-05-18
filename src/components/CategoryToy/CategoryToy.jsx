@@ -34,7 +34,7 @@ const CategoryToy = ({ toy }) => {
               <span className="text-3xl font-bold text-gray-900 ">
                 ${toy.price}
               </span>
-              <Link to={"#"}>
+              <Link to={`/toy/${toy._id}`}>
                 <button className="bg-[#757EFA] px-[20px] py-[8px] text-white rounded-md">
                   View Details
                 </button>
