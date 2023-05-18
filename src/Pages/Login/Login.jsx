@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
+
+  const {signIn, googleLogin} = useContext(AuthContext);
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -10,6 +13,28 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email,password);
+
+      signIn(email,password)
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch(error => {
+        console.log(error);
+      })
+
+    }
+
+
+    const handleGoogleLogin = () => {
+      googleLogin()
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch(error => {
+        console.log(error);
+      })
     }
 
 
@@ -79,7 +104,7 @@ const Login = () => {
               <div className="h-1 bg-indigo-600 w-full"></div>
             </div>
             <div>
-              <button className="flex justify-center items-center gap-2 border border-indigo-600 p-2 rounded-lg w-full hover:bg-indigo-300">
+              <button onClick={handleGoogleLogin} className="flex justify-center items-center gap-2 border border-indigo-600 p-2 rounded-lg w-full hover:bg-indigo-300">
                 <FcGoogle></FcGoogle>
                 Sign in with Google
               </button>
