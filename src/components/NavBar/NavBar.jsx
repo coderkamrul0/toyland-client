@@ -13,7 +13,6 @@ const NavBar = () => {
   const navItems = (
     <>
       <li><Link to={"/"}>Home</Link></li>
-      <li><Link to={"/blogs"}>Blogs</Link></li>
       <li><Link to={"/allToys"}>All Toys</Link></li>
       {
         user && <li><Link to={"/addaToy"}>Add A Toy</Link></li>
@@ -21,6 +20,7 @@ const NavBar = () => {
       {
         user && <li><Link to={"/myToys"}>My Toys</Link></li>
       }
+      <li><Link to={"/blogs"}>Blogs</Link></li>
       
     </>
   );
