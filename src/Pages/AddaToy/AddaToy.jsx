@@ -62,6 +62,8 @@ const AddaToy = () => {
                 name="sellerName"
                 id="sellerName"
                 className="w-full py-1 outline-none border border-[#757efa]"
+                defaultValue={user.displayName}
+                disabled
               />
             </div>
           </div>

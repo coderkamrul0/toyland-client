@@ -15,6 +15,22 @@ const MyToys = () => {
       });
   }, []);
 
+const handleDelete = (id) => {
+  console.log(id);
+  fetch(`http://localhost:5000/allToys/${id}`,{
+    method: "DELETE"
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+    if(data.deletedCount > 0){
+      const remaining = myToys.filter(myToy => myToy._id  !== id)
+      setMyToys(remaining)
+    }
+  })
+}
+
+
   return (
     <div className="pb-96">
       <h1 className="text-5xl font-bold text-center py-24">My Toys</h1>
@@ -54,7 +70,7 @@ const MyToys = () => {
                           <FaPencilAlt />
                         </button>
                       </Link>
-                      <button className="bg-[#757EFA] px-[8px] py-[8px] text-white rounded-md">
+                      <button onClick={()=>handleDelete(toy._id)} className="bg-[#757EFA] px-[8px] py-[8px] text-white rounded-md">
                         <FaArchive />
                       </button>
                     </div>
