@@ -10,6 +10,7 @@ import {
 const Footer = () => {
   return (
     <div>
+      <hr />
       <footer className="footer p-10  text-base-content">
         <div>
           <span className="footer-title">Useful Links</span>

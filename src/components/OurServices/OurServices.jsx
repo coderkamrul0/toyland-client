@@ -35,7 +35,7 @@ const OurServices = () => {
             </div>
           </div>
         </div>
-        <div>
+        <div className=" rounded-full ">
             <img className="w-80" src="https://i.ibb.co/qkHXc7m/pngwing-com-7.png" alt="" />
         </div>
         <div>
