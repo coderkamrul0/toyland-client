@@ -26,7 +26,7 @@ const ShopByCategory = () => {
         <div className='pt-5'>
             <h1 className='text-3xl font-bold text-center'>Shop By Category</h1>
 
-            <div className='flex justify-end gap-5 font-semibold items-center text-lg'>
+            <div className='flex justify-center py-5 gap-5 font-semibold items-center text-lg'>
                 <div onClick={() => handleTabClick('Baby')} className={`cursor-pointer ${
                 activeTab == "Baby" ? "bg-[#757EFA] text-white p-2 rounded-md" : ""
               }`}>Baby Dolls</div>
