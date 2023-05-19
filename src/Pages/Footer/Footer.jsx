@@ -65,7 +65,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <p className="text-center pb-5"><small>Copyright All right reserved || 2023 || ToyLand</small></p>
+      <p className="text-center bg-black text-white"><small>Copyright All right reserved || 2023 || ToyLand</small></p>
     </div>
   );
 };

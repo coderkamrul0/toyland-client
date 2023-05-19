@@ -16,7 +16,23 @@ const MyToys = () => {
       });
   }, []);
 
-  
+  const handleDelete = id => {
+    const proceed = confirm('Are You sure you want to delete');
+    if (proceed) {
+        fetch(`http://localhost:5000/allToys/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.deletedCount > 0) {
+                    alert('deleted successful');
+                    const remaining = myToys.filter(myToy => myToy._id !== id);
+                    setMyToys(remaining);
+                }
+            })
+    }
+}
 
 
   

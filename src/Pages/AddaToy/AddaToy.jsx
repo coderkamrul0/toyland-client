@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const AddaToy = () => {
     const {user} = useContext(AuthContext);
@@ -33,7 +35,17 @@ const AddaToy = () => {
     })
     .then(res => res.json())
     .then(data => {
-        console.log(data);
+      console.log(data);
+      toast.success('Toy Added Successfully', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
     })
 
   };
@@ -145,6 +157,20 @@ const AddaToy = () => {
             <button className="bg-[#757EFA] px-[20px] py-[8px] text-white rounded-md w-full" type="submit">Submit</button>
         </form>
       </div>
+      <ToastContainer
+position="top-center"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+/>
+{/* Same as */}
+<ToastContainer />
     </div>
   );
 };

@@ -5,12 +5,8 @@ const ErrorPage = () => {
   return (
     <div className="h-[100vh]">
       <main className="h-screen w-full flex flex-col justify-center items-center ">
-        <h1 className="text-9xl font-extrabold text-black tracking-widest">
-          404
-        </h1>
-        <div className="bg-[#FF6A3D] px-2 text-sm rounded rotate-12 absolute">
-          Page Not Found
-        </div>
+        <img className="w-96" src="https://i.ibb.co/S67BD1N/Pngtree-404-cartoon-cute-hamster-error-4043582.png" alt="" />
+        
         <button className="mt-5">
           <a className="relative inline-block text-sm font-medium text-[#FF6A3D] group active:text-orange-500 focus:outline-none focus:ring">
             <span className="absolute inset-0 transition-transform translate-x-0.5 translate-y-0.5 bg-[#FF6A3D] group-hover:translate-y-0 group-hover:translate-x-0"></span>
