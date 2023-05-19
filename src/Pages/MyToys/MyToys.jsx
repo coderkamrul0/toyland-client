@@ -49,7 +49,7 @@ const MyToys = () => {
                   <th className="text-center">{toy.quantity}</th>
                   <th>
                     <div className="flex  gap-2">
-                      <Link to={''}>
+                      <Link to={`/update/${toy._id}`}>
                         <button className="bg-[#757EFA] px-[8px] py-[8px] text-white rounded-md">
                           <FaPencilAlt />
                         </button>

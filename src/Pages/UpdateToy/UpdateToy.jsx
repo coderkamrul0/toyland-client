@@ -1,11 +1,129 @@
-import React from 'react';
+import React from "react";
+import { useLoaderData, useParams } from "react-router-dom";
 
 const UpdateToy = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+    const {id} = useParams()
+
+    const defaultData = useLoaderData();
+
+  const handleUpdate = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const picture = form.photoUrl.value;
+    const quantity = form.quantity.value;
+    const details = form.details.value;
+    const updateData = { name, price, rating, picture, quantity, details };
+    console.log(updateData);
+    console.log(id);
+
+    fetch(`http://localhost:5000/allToys/${id}`, {
+
+      method: "PATCH",
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(updateData)
+
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+    })
+
+
+  };
+
+  return (
+    <div>
+      <h1 className="text-5xl font-bold text-center">Update A Toy</h1>
+
+      <div className="w-3/4 mx-auto py-10">
+        <form onSubmit={handleUpdate}>
+          <div className="md:flex gap-5 pb-5">
+            <div className="w-full">
+              <label htmlFor="toyName">ToyName</label> <br />
+              <input
+                type="text"
+                placeholder="Toy Name"
+                name="name"
+                id="toyName"
+                defaultValue={defaultData.name}
+                className="w-full py-1 outline-none border border-[#757efa]"
+              />
+            </div>
+          </div>
+          <div className="md:flex gap-5 pb-5">
+            <div className="w-full">
+              <label htmlFor="photoUrl">photo Url</label> <br />
+              <input
+                type="text"
+                placeholder="Photo Url"
+                name="photoUrl"
+                id="photoUrl"
+                defaultValue={defaultData.picture}
+                className="w-full py-1 outline-none border border-[#757efa]"
+              />
+            </div>
+          </div>
+          <div className="md:flex gap-5 pb-5">
+            <div className="w-full">
+              <label htmlFor="price">Price</label> <br />
+              <input
+                type="text"
+                placeholder="Price"
+                name="price"
+                id="price"
+                defaultValue={defaultData.price}
+                className="w-full py-1 outline-none border border-[#757efa]"
+              />
+            </div>
+            <div className="w-full">
+              <label htmlFor="quantity">Available Quantity</label> <br />
+              <input
+                type="text"
+                placeholder="Available Quantity"
+                name="quantity"
+                id="quantity"
+                defaultValue={defaultData.quantity}
+                className="w-full py-1 outline-none border border-[#757efa]"
+              />
+            </div>
+          </div>
+          <div className="md:flex gap-5 pb-5">
+            <div className="w-full">
+              <label htmlFor="rating">Rating</label> <br />
+              <input
+                type="text"
+                placeholder="rating"
+                name="rating"
+                id="rating"
+                defaultValue={defaultData.rating}
+                className="w-full py-1 outline-none border border-[#757efa]"
+              />
+            </div>
+          </div>
+          <div>
+            <textarea
+              className="w-full mb-5 outline-none border border-[#757efa]"
+              name="details"
+              cols="70"
+              rows="5"
+              defaultValue={defaultData.details}
+            ></textarea>
+          </div>
+          <button
+            className="bg-[#757EFA] px-[20px] py-[8px] text-white rounded-md w-full"
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default UpdateToy;
