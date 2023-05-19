@@ -20,7 +20,7 @@ const UpdateToy = () => {
     console.log(updateData);
     console.log(id);
 
-    fetch(`http://localhost:5000/allToys/${id}`, {
+    fetch(`https://toyland-server-xi.vercel.app/allToys/${id}`, {
 
       method: "PATCH",
       headers: {

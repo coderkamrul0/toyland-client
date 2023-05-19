@@ -13,7 +13,7 @@ const Home = () => {
         <title>ToyLand | Home</title>
       </Helmet>
       <Banner />
-      <TestiMonial />
+      {/* <TestiMonial /> */}
       <PhotoGellary />
       <ShopByCategory />
       <OurServices />

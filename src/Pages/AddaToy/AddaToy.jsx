@@ -26,7 +26,7 @@ const AddaToy = () => {
     const toy = {name,picture,category,price,rating,seller_name,seller_email,quantity,details};
     console.log(toy);
 
-    fetch(`http://localhost:5000/addToy`, {
+    fetch(`https://toyland-server-xi.vercel.app/addToy`, {
         method: "POST",
         headers: {
             'content-type': 'application/json'

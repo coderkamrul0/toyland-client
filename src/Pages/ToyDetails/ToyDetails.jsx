@@ -7,7 +7,7 @@ const ToyDetails = () => {
   const [toy, setToy] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/toy/${id}`)
+    fetch(`https://toyland-server-xi.vercel.app/toy/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setToy(data);

@@ -54,7 +54,7 @@ const NavBar = () => {
         </div>
         <Link to="/">
           <img
-            className="w-32"
+            className="w-[100px]"
             src={"https://i.ibb.co/b5x01DM/logo.png"}
             alt="ToyLand"
           />

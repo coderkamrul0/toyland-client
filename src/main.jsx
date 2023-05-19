@@ -7,8 +7,8 @@ import router from "./Routes/Routes.jsx";
 import AuthProvider from "./providers/AuthProvider.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <div style={{ backgroundColor: "#E9F8FF" }}>
-    <div className="max-w-7xl mx-auto">
+  <div style={{ backgroundColor: "#E9F8FF", overflowX: 'hidden'}}>
+    <div className="max-w-7xl px-2 mx-auto">
       <React.StrictMode>
         <AuthProvider>
           <RouterProvider router={router} />

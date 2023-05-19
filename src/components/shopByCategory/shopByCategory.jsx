@@ -13,7 +13,7 @@ const ShopByCategory = () => {
 
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/toys/${activeTab}`)
+        fetch(`https://toyland-server-xi.vercel.app/toys/${activeTab}`)
         .then(res => res.json())
         .then(data => {
             setToys(data)
@@ -28,13 +28,13 @@ const ShopByCategory = () => {
 
             <div className='flex justify-center py-5 gap-5 font-semibold items-center text-lg'>
                 <div onClick={() => handleTabClick('Baby')} className={`cursor-pointer ${
-                activeTab == "Baby" ? "bg-[#757EFA] text-white p-2 rounded-md" : ""
+                activeTab == "Baby" ? "bg-[#757EFA] text-white p-1 rounded-md" : ""
               }`}>Baby Dolls</div>
                 <div onClick={() => handleTabClick('Barbie')} className={`cursor-pointer ${
-                activeTab == "Barbie" ? " bg-[#757EFA] text-white p-2 rounded-md" : ""
+                activeTab == "Barbie" ? " bg-[#757EFA] text-white p-1 rounded-md" : ""
               }`}>Barbie Dolls</div>
                 <div onClick={() => handleTabClick('American')} className={`cursor-pointer${
-                activeTab == "American" ? " bg-[#757EFA] text-white p-2 rounded-md" : ""
+                activeTab == "American" ? " bg-[#757EFA] text-white p-1 rounded-md" : ""
               }`}>American Girls</div>
             </div>
             <div className='grid md:grid-cols-3 gap-5 '>
