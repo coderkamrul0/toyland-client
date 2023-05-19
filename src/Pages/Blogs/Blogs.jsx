@@ -1,8 +1,13 @@
 import React from "react";
+import { Helmet } from 'react-helmet';
+
 
 const Blogs = () => {
   return (
     <div className="py-16">
+      <Helmet>
+        <title>ToyLand | Blogs</title>
+      </Helmet>
       <h1 className="text-center text-4xl font-bold">ToyLand Blogs</h1>
       <div className="grid md:grid-cols-2 gap-5">
         <div>

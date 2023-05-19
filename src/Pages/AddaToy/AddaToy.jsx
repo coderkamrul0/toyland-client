@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const AddaToy = () => {
     const {user} = useContext(AuthContext);
@@ -39,6 +40,10 @@ const AddaToy = () => {
 
   return (
     <div className="py-28">
+      <Helmet>
+        <title>ToyLand | Add a toy</title>
+      </Helmet>
+
       <h1 className="text-5xl font-bold text-center">Add a toy</h1>
 
       <div className="w-3/4 mx-auto py-10">

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { useLoaderData, useParams } from "react-router-dom";
 
 const UpdateToy = () => {
@@ -38,6 +39,10 @@ const UpdateToy = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>ToyLand | Update Toy</title>
+      </Helmet>
+
       <h1 className="text-5xl font-bold text-center">Update A Toy</h1>
 
       <div className="w-3/4 mx-auto py-10">

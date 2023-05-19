@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 
 const ToyDetails = () => {
@@ -15,6 +16,10 @@ const ToyDetails = () => {
 
   return (
     <div className="py-24">
+      <Helmet>
+        <title>ToyLand | Details</title>
+      </Helmet>
+
       <h1 className="text-center text-4xl font-bold pb-10">Toy Details</h1>
       <div>
         <div className="md:flex">

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaPencilAlt, FaArchive } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -15,27 +16,24 @@ const MyToys = () => {
       });
   }, []);
 
-const handleDelete = (id) => {
-  console.log(id);
-  fetch(`http://localhost:5000/allToys/${id}`,{
-    method: "DELETE"
-  })
-  .then(res => res.json())
-  .then(data => {
-    console.log(data);
-    if(data.deletedCount > 0){
-      const remaining = myToys.filter(myToy => myToy._id  !== id)
-      setMyToys(remaining)
-    }
-  })
-}
+  
 
+
+  
 
   return (
     <div className="pb-96">
+      <Helmet>
+        <title>ToyLand | My Toys</title>
+      </Helmet>
+
       <h1 className="text-5xl font-bold text-center py-24">My Toys</h1>
       <div>
         <div className="overflow-x-auto py-10">
+        
+
+
+
           <table className="table table-zebra w-full">
             {/* head */}
             <thead>
@@ -70,7 +68,10 @@ const handleDelete = (id) => {
                           <FaPencilAlt />
                         </button>
                       </Link>
-                      <button onClick={()=>handleDelete(toy._id)} className="bg-[#757EFA] px-[8px] py-[8px] text-white rounded-md">
+                      <button
+                        onClick={() => handleDelete(toy._id)}
+                        className="bg-[#757EFA] px-[8px] py-[8px] text-white rounded-md"
+                      >
                         <FaArchive />
                       </button>
                     </div>

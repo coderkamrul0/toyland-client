@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet';
+
 
 const AllToys = () => {
   const [allToys, setAllToys] = useState([]);
@@ -27,6 +29,9 @@ const handleSearch = () => {
 
   return (
     <div className="py-28">
+      <Helmet>
+        <title>ToyLand | All Toys</title>
+      </Helmet>
       <h1 className="text-5xl font-bold text-center">All Toys</h1>
       <div className="text-center">
         <input className="md:w-2/5 py-2 mt-5 outline-none border border-[#757EFA] px-3 rounded-md " onChange={(event)=> setSearchText(event.target.value)} type="text" name="search" id="" />
