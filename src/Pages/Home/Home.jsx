@@ -5,6 +5,7 @@ import TestiMonial from "../../components/TestiMonaial/TestiMonial";
 import PhotoGellary from "../../components/PhotoGellary/PhotoGellary";
 import OurServices from "../../components/OurServices/OurServices";
 import { Helmet } from "react-helmet";
+import Newsletter from "../../components/Newsletter/Newsletter";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <PhotoGellary />
       <ShopByCategory />
       <OurServices />
+      <Newsletter/>
     </div>
   );
 };
