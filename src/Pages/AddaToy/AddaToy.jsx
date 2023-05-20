@@ -3,6 +3,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import Swal from "sweetalert2";
 
 const AddaToy = () => {
     const {user} = useContext(AuthContext);
@@ -36,16 +37,14 @@ const AddaToy = () => {
     .then(res => res.json())
     .then(data => {
       console.log(data);
-      toast.success('Toy Added Successfully', {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        });
+      if(data.insertedId){
+        Swal.fire({
+          title: 'Success!',
+          text: 'Toy Added Successfully',
+          icon: 'success',
+          confirmButtonText: 'Cool'
+        })
+      }
     })
 
   };

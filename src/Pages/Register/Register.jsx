@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from 'react-helmet';
@@ -10,6 +10,7 @@ const Register = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
+    const [error, setError] = useState('')
 
     const handleRegister = (event) => {
         event.preventDefault();
@@ -18,8 +19,27 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const photo = form.photo.value;
-        console.log(name,email,password,photo);
 
+        if(!name){
+          setError("Please Enter your name")
+          return;
+        }
+        if(!email){
+          setError("Please Enter your email")
+          return;
+        }
+        if (!password) {
+          setError("Please enter a password");
+          return;
+        } else if (password.length < 8) {
+          setError("Your password must be at least 8 characters long");
+          return;
+          
+        }
+        if(!photo){
+          setError("Please Enter Your Photo URL")
+          return;
+        }
 
         createUser(email,password)
         .then(result => {
@@ -63,7 +83,7 @@ const Register = () => {
                   id="name"
                   name="name"
                   type="text"
-                  required
+                  
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -80,7 +100,7 @@ const Register = () => {
                   id="email"
                   name="email"
                   type="email"
-                  required
+                  
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -100,7 +120,7 @@ const Register = () => {
                   id="password"
                   name="password"
                   type="password"
-                  required
+                  
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -119,12 +139,12 @@ const Register = () => {
                   id="photo"
                   name="photo"
                   type="text"
-                  required
+                  
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
-
+              <p className="text-center text-red-600"><small>{error}</small></p>
             <div>
               <button
                 type="submit"

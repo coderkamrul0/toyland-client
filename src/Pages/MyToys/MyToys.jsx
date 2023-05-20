@@ -3,6 +3,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { FaPencilAlt, FaArchive } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -16,26 +17,32 @@ const MyToys = () => {
       });
   }, []);
 
-  const handleDelete = id => {
-    const proceed = confirm('Are You sure you want to delete');
-    if (proceed) {
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't Delete this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
         fetch(`https://toyland-server-xi.vercel.app/allToys/${id}`, {
-            method: 'DELETE'
+          method: "DELETE",
         })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.deletedCount > 0) {
-                    alert('deleted successful');
-                    const remaining = myToys.filter(myToy => myToy._id !== id);
-                    setMyToys(remaining);
-                }
-            })
-    }
-}
-
-
-  
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              const remaining = myToys.filter((myToy) => myToy._id !== id);
+              setMyToys(remaining);
+            }
+          });
+      }
+    });
+  };
 
   return (
     <div className="pb-96">
@@ -46,10 +53,6 @@ const MyToys = () => {
       <h1 className="text-5xl font-bold text-center py-24">My Toys</h1>
       <div>
         <div className="overflow-x-auto py-10">
-        
-
-
-
           <table className="table table-zebra w-full">
             {/* head */}
             <thead>

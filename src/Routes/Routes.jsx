@@ -54,7 +54,7 @@ const router = createBrowserRouter([
         },
         {
           path: '/update/:id',
-          element: <UpdateToy></UpdateToy>,
+          element: <PrivateRoute><UpdateToy/></PrivateRoute>,
           loader: ({params}) => fetch(`https://toyland-server-xi.vercel.app/toy/${params.id}`)
         }
       ]
