@@ -3,7 +3,7 @@ import React from "react";
 const OurServices = () => {
   return (
     <div className="py-16">
-      <h1 className="text-4xl font-bold pb-10 text-center">Our Services</h1>
+      <h1 className="text-3xl font-bold pb-10 text-center">Why are we the best!</h1>
 
       <div className="md:flex justify-between">
         <div>

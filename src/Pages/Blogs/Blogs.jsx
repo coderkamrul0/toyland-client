@@ -8,9 +8,10 @@ const Blogs = () => {
       <Helmet>
         <title>ToyLand | Blogs</title>
       </Helmet>
-      <h1 className="text-center text-4xl font-bold">ToyLand Blogs</h1>
+      <h1 className="text-center text-4xl pb-10  font-bold">ToyLand Blogs</h1>
       <div className="grid md:grid-cols-2 gap-5">
-        <div>
+        <div className="border p-5 shadow-lg">
+          <img className="mb-5" src="https://stytch.com/blog/wp-content/uploads/2022/01/How-a-refresh-token-is-generated-and-used-1.png" alt="" />
           <h4 className="font-bold text-xl pb-5">
             What is an access token and refresh token? How do they work and
             where should we store them on the client-side?
@@ -28,7 +29,8 @@ const Blogs = () => {
             storage or a secure database.
           </p>
         </div>
-        <div>
+        <div className="border p-5 shadow-lg">
+          <img className="mb-5" src="https://i.ytimg.com/vi/QwevGzVu_zk/maxresdefault.jpg" alt="" />
           <h4 className="font-bold text-xl pb-5">Compare SQL and NoSQL databases?</h4>
           <p>
             QL databases are relational databases that use a structured query
@@ -47,7 +49,8 @@ const Blogs = () => {
             database is a good choice.
           </p>
         </div>
-        <div>
+        <div className="border p-5 shadow-lg">
+          <img className="mb-5" src="https://cdn.sanity.io/images/ay6gmb6r/production/62448459577c97af6b9493a5dfd2008d262c4410-2240x1260.png" alt="" />
           <h4 className="font-bold text-xl pb-5">What is express js? What is Nest JS?</h4>
           <p>
             1 Express.js is a minimal and flexible Node.js web application
@@ -62,7 +65,8 @@ const Blogs = () => {
             good choice for building scalable and maintainable web applications.
           </p>
         </div>
-        <div>
+        <div className="border p-5 shadow-lg">
+          <img className="mb-5" src="https://community-cdn-digitalocean-com.global.ssl.fastly.net/4CUuvmgrC4Cunov15s1GeQp9" alt="" />
           <h4 className="font-bold text-xl pb-5">What is MongoDB aggregate and how does it work?</h4>
           <p>
             MongoDB aggregate is a feature that allows you to perform complex

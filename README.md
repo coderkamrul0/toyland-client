@@ -34,6 +34,12 @@
 
 * Then there is a service area where there are details of the service followed by Newsletter New Subscriber will go with the newsletter below.
 
+* If you go to the All Toys round of the website, all the trucks will be displayed on the website.
+
+* The site has a page called Add a Toy. No one can enter this page without login. You can add to it by logging in.
+
+* Visiting the my toys page of the website will show the number of items that the logged in person has added to the website. Can't see other people's items. And from there he can delete and edit his items
+
 
 
 ### Live Website Link 

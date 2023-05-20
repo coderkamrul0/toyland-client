@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
+  // const [sortOrder, setSortOrder] = useState('');
 
   useEffect(() => {
     fetch(`https://toyland-server-xi.vercel.app/myToys/${user?.email}`)
@@ -44,8 +45,19 @@ const MyToys = () => {
     });
   };
 
+  // useEffect(() => {
+  //         fetch(`http://localhost:5000/myToys?sort=${sortOrder}`)
+  //         .then(res=>res.json())
+  //         .then(data=>setMyToys(data))
+  //     }, [sortOrder])
+
+  //     const handleSortOrderChange = (e) => {
+  //         console.log(e.target.value)
+  //        setSortOrder(e.target.value)
+  //       };
+
   return (
-    <div className="pb-96">
+    <div className="pb-52">
       <Helmet>
         <title>ToyLand | My Toys</title>
       </Helmet>
@@ -53,6 +65,17 @@ const MyToys = () => {
       <h1 className="text-5xl font-bold text-center py-24">My Toys</h1>
       <div>
         <div className="overflow-x-auto py-10">
+          {/* <select
+            value={sortOrder}
+            onChange={handleSortOrderChange}
+            className="select select-primary  max-w-xs"
+          >
+            <option value="" disabled>
+              Best Match
+            </option>
+            <option value="lowest">Price(Low to high)</option>
+            <option value="highest">Price(High to low)</option>
+          </select> */}
           <table className="table table-zebra w-full">
             {/* head */}
             <thead>
