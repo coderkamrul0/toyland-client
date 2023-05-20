@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
+import { AuthContext } from "../../providers/AuthProvider";
 
 
 const AllToys = () => {
   const [allToys, setAllToys] = useState([]);
+  const {user} = useContext(AuthContext)
   const [searchText, setSearchText] = useState('')
   useEffect(() => {
     fetch(`https://toyland-server-xi.vercel.app/allToys`)

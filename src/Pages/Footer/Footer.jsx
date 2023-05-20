@@ -23,7 +23,6 @@ const Footer = () => {
           <span className="footer-title">Company</span>
           <a className="link link-hover">Privacy Policy</a>
           <a className="link link-hover">Tarms & Conditions</a>
-          <a className="link link-hover">Press kit</a>
         </div>
         <div>
           <span className="footer-title">Address</span>
