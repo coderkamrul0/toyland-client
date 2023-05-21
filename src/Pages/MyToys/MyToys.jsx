@@ -77,13 +77,13 @@ const MyToys = () => {
               className=" bg-[#757EFA] rounded-lg py-1 px-3 text-white"
               onClick={handleAscending}
             >
-              Low to High
+              High to Low
             </button>
             <button
               className=" bg-[#757EFA] rounded-lg py-1 px-3 text-white"
               onClick={handleDescending}
             >
-              High to Low
+              Low to High
             </button>
           </div>
           <table className="table table-zebra w-full">
