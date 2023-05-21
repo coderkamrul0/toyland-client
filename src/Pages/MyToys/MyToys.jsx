@@ -18,6 +18,23 @@ const MyToys = () => {
       });
   }, []);
 
+  const handleAscending = () => {
+    fetch(`https://toyland-server-xi.vercel.app/myToys/${user?.email}?sort=asc`)
+      .then((res) => res.json())
+      .then((data) => {
+        setMyToys(data);
+      });
+  };
+  const handleDescending = () => {
+    fetch(
+      `https://toyland-server-xi.vercel.app/myToys/${user?.email}?sort=desc`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setMyToys(data);
+      });
+  };
+
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -45,17 +62,6 @@ const MyToys = () => {
     });
   };
 
-  // useEffect(() => {
-  //         fetch(`http://localhost:5000/myToys?sort=${sortOrder}`)
-  //         .then(res=>res.json())
-  //         .then(data=>setMyToys(data))
-  //     }, [sortOrder])
-
-  //     const handleSortOrderChange = (e) => {
-  //         console.log(e.target.value)
-  //        setSortOrder(e.target.value)
-  //       };
-
   return (
     <div className="pb-52">
       <Helmet>
@@ -65,17 +71,21 @@ const MyToys = () => {
       <h1 className="text-5xl font-bold text-center py-24">My Toys</h1>
       <div>
         <div className="overflow-x-auto py-10">
-          {/* <select
-            value={sortOrder}
-            onChange={handleSortOrderChange}
-            className="select select-primary  max-w-xs"
-          >
-            <option value="" disabled>
-              Best Match
-            </option>
-            <option value="lowest">Price(Low to high)</option>
-            <option value="highest">Price(High to low)</option>
-          </select> */}
+          <div className="flex justify-center gap-2 pb-3 items-center">
+            Sort By: 
+            <button
+              className=" bg-[#757EFA] rounded-lg py-1 px-3 text-white"
+              onClick={handleAscending}
+            >
+              Low to High
+            </button>
+            <button
+              className=" bg-[#757EFA] rounded-lg py-1 px-3 text-white"
+              onClick={handleDescending}
+            >
+              High to Low
+            </button>
+          </div>
           <table className="table table-zebra w-full">
             {/* head */}
             <thead>
