@@ -24,7 +24,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-* To build the application, Telwind and some component libraries are used for Fire Best Design for React Router Authentication.
+* Using React, React Router, Firebase for TelWind authentication, and some component libraries to build the web application.
 
 * The website data is stored in MongoDB and from there all the data is loaded and displayed on the client side.
 

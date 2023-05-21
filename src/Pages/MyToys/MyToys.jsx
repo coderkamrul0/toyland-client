@@ -68,7 +68,7 @@ const MyToys = () => {
         <title>ToyLand | My Toys</title>
       </Helmet>
 
-      <h1 className="text-5xl font-bold text-center py-24">My Toys</h1>
+      <h1 className="text-5xl font-bold text-center pt-16">My Toys</h1>
       <div>
         <div className="overflow-x-auto py-10">
           <div className="flex justify-center gap-2 pb-3 items-center">
@@ -77,13 +77,13 @@ const MyToys = () => {
               className=" bg-[#757EFA] rounded-lg py-1 px-3 text-white"
               onClick={handleAscending}
             >
-              High to Low
+              Low to High
             </button>
             <button
               className=" bg-[#757EFA] rounded-lg py-1 px-3 text-white"
               onClick={handleDescending}
             >
-              Low to High
+              High to Low
             </button>
           </div>
           <table className="table table-zebra w-full">

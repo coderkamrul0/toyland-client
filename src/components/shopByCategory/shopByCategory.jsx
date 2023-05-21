@@ -23,7 +23,7 @@ const ShopByCategory = () => {
 
 
     return (
-        <div className='pt-5'>
+        <div className='pt-16'>
             <h1 className='text-3xl font-bold text-center'>Shop By Category</h1>
 
             <div className='flex justify-center py-5 gap-5 font-semibold items-center text-lg'>

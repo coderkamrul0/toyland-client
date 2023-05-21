@@ -18,7 +18,7 @@ const AddaToy = () => {
     const name = form.name.value;
     const picture = form.photoUrl.value;
     const category = selectedOption;
-    const price = form.price.value;
+    const price = parseFloat(form.price.value);
     const rating = form.rating.value;
     const seller_name = form.sellerName.value;
     const seller_email = form.sellerEmail.value;
@@ -50,14 +50,14 @@ const AddaToy = () => {
   };
 
   return (
-    <div className="py-28">
+    <div className="py-16">
       <Helmet>
         <title>ToyLand | Add a toy</title>
       </Helmet>
 
       <h1 className="text-5xl font-bold text-center">Add a toy</h1>
 
-      <div className="w-3/4 mx-auto py-10">
+      <div className="w-3/4 mx-auto py-10 shadow-xl p-5">
         <form onSubmit={handleAddAToy}>
           <div className="md:flex gap-5 pb-5">
             <div className="w-full">

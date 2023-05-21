@@ -46,14 +46,14 @@ const UpdateToy = () => {
   };
 
   return (
-    <div>
+    <div className="pb-10">
       <Helmet>
         <title>ToyLand | Update Toy</title>
       </Helmet>
 
-      <h1 className="text-5xl font-bold text-center">Update A Toy</h1>
+      <h1 className=" pt-16 text-4xl font-bold text-center">Update A Toy</h1>
 
-      <div className="w-3/4 mx-auto py-10">
+      <div className="w-3/4 mx-auto py-10 shadow-xl p-5">
         <form onSubmit={handleUpdate}>
           <div className="md:flex gap-5 pb-5">
             <div className="w-full">

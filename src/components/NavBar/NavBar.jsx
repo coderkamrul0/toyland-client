@@ -26,7 +26,7 @@ const NavBar = () => {
   );
 
   return (
-    <div className="navbar bg-[#E9F8FF]">
+    <div className="navbar bg-[#E9F8FF] border-b-2 border-[#757EFA]">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -72,15 +72,16 @@ const NavBar = () => {
                 alt="Profile Picture"
                 data-toggle="tooltip"
                 title={user.displayName}
+                className="border-2 border-[#757EFA] mr-1"
               />
           )
         }
         {
           user? (
-            <button onClick={handleLogOut} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Sign Out</button>
+            <button onClick={handleLogOut} className="bg-[#757EFA] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Sign Out</button>
           ):
           <Link to="/login">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Login</button>
+          <button className="bg-[#757EFA] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Login</button>
         </Link>}
       </div>
     </div>

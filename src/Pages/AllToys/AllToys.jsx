@@ -30,7 +30,7 @@ const handleSearch = () => {
 
 
   return (
-    <div className="py-28">
+    <div className="py-16">
       <Helmet>
         <title>ToyLand | All Toys</title>
       </Helmet>

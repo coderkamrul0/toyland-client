@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
+import AuthProvider from "../../providers/AuthProvider";
 
 const CategoryToy = ({ toy }) => {
+
+
   return (
     <div>
       <div className="max-w-2xl mx-auto">
@@ -34,8 +37,8 @@ const CategoryToy = ({ toy }) => {
               <span className="text-3xl font-bold text-gray-900 ">
                 ${toy.price}
               </span>
-              <Link to={`/toy/${toy._id}`}>
-                <button className="bg-[#757EFA] px-[20px] py-[8px] text-white rounded-md">
+              <Link to={`/toy/${toy._id}`} >
+                <button  className="bg-[#757EFA] px-[20px] py-[8px] text-white rounded-md">
                   View Details
                 </button>
               </Link>
