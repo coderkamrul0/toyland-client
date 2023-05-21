@@ -14,7 +14,6 @@ const Footer = () => {
       <footer className="footer p-10  text-base-content">
         <div>
           <span className="footer-title">Useful Links</span>
-          <a className="link link-hover">About</a>
           <a className="link link-hover">Blog</a>
           <a className="link link-hover">Services</a>
           <a className="link link-hover">Contact Us</a>
@@ -32,6 +31,15 @@ const Footer = () => {
             Zip code 1231 <br />
             Country calling code +880 <br />
             Country Bangladesh
+          </p>
+        </div>
+        <div>
+          <span className="footer-title">About Us</span>
+          <p>
+            Toyland is a toy selling website that offers a wide variety of toys
+            for all ages and interests. We have a large selection of popular
+            brands, including LEGO, Barbie, Hot Wheels, and more. We also offer
+            a variety of educational toys, STEM toys, and outdoor toys.
           </p>
         </div>
       </footer>
@@ -64,7 +72,9 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <p className="text-center bg-black text-white"><small>Copyright All right reserved || 2023 || ToyLand</small></p>
+      <p className="text-center bg-black text-white">
+        <small>Copyright All right reserved || 2023 || ToyLand</small>
+      </p>
     </div>
   );
 };
