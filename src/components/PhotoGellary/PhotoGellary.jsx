@@ -41,7 +41,7 @@ const PhotoGellary = () => {
               <img
                 alt="gallery"
                 className="block shadow-2xl h-full w-full rounded-lg object-cover object-center"
-                src="https://people.com/thmb/CKA6be5VXjiof9zWPOuxbEI0RR8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(749x0:751x2)/barbies-bbe03dd1f94f491a94fb48a4610d0b06.jpg"
+                src="https://media.4rgos.it/i/Argos/sb-2122-m0014-m007-m050-asym-m008-m022-barbie-brandshop-header?maxW=768&bg=rgb(255,255,255)&qlt=75&fmt.jpeg.interlaced=true"
               />
             </div>
             <div className="w-1/2 p-1 md:p-2">
